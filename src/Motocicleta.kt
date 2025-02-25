@@ -9,6 +9,12 @@ class Motocicleta(
     val cilindrada: Int
 ) : Vehiculo(marca, modelo, capacidadCombustible, combustibleActual, kilometrosActuales) {
 
+    companion object{
+        const val KM_POR_LITRO_MOTO = 20f
+        const val GASTO_CABALLITO = 6.5f
+
+    }
+
     init {
         require(cilindrada in 125..1000) { "La cilindrada debe estar entre 125 y 1000 cc." }
     }
