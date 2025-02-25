@@ -1,4 +1,3 @@
-import kotlin.div
 import kotlin.math.roundToInt
 
 const val KM_POR_LITRO = 10f
@@ -16,18 +15,15 @@ open class Vehiculo(
     var kilometrosActuales: Float = 0f
 ) {
 
-    // Método para obtener información del vehículo
     open fun obtenerInformacion(): String {
         return "Marca: $marca, Modelo: $modelo, Combustible actual: ${"%.2f".format(combustibleActual)} L, " +
                 "Kilometraje: ${"%.2f".format(kilometrosActuales)} km, Autonomía: ${"%.2f".format(calcularAutonomia())} km"
     }
 
-    // Método para calcular la autonomía
     open fun calcularAutonomia(): Float {
         return (combustibleActual * KM_POR_LITRO * 100).roundToInt() / 100f
     }
 
-    // Método para realizar un viaje
     open fun realizaViaje(distancia: Float): Float {
         val distanciaPosible = calcularAutonomia()
         if (distanciaPosible >= distancia) {
@@ -41,7 +37,6 @@ open class Vehiculo(
         }
     }
 
-    // Método para repostar combustible
     open fun repostar(cantidad: Float): Float {
         val combustibleNecesario = capacidadCombustible - combustibleActual
         val repostado = if (cantidad <= 0 || cantidad > combustibleNecesario) combustibleNecesario else cantidad
