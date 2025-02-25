@@ -1,11 +1,6 @@
 import kotlin.math.roundToInt
 
-const val KM_POR_LITRO = 10f
-const val AHORRO_ELECTRICO = 5f
-const val KM_POR_LITRO_MOTO = 20f
-const val GASTO_DERRAPE = 7.5f
-const val GASTO_DERRAPE_HIBRIDO = 6.25f
-const val GASTO_CABALLITO = 6.5f
+
 
 open class Vehiculo(
     val marca: String,
@@ -14,6 +9,11 @@ open class Vehiculo(
     var combustibleActual: Float = 0f,
     var kilometrosActuales: Float = 0f
 ) {
+
+    companion object{
+        const val KM_POR_LITRO = 10f
+
+    }
 
     open fun obtenerInformacion(): String {
         return "Marca: $marca, Modelo: $modelo, Combustible actual: ${"%.2f".format(combustibleActual)} L, " +

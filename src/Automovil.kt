@@ -9,6 +9,10 @@ class Automovil(
 
     companion object {
         var condicionBritanica: Boolean = false
+        const val GASTO_DERRAPE_HIBRIDO = 6.25f
+        const val AHORRO_ELECTRICO = 5f
+        const val GASTO_DERRAPE = 7.5f
+
     }
 
     fun cambiarCondicionBritanica(nuevaCondicion: Boolean) {
